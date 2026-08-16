@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+body {
+	font-family: "Zen Maru Gothic",sans-serif;
+	font-weight: 500; /*300,400,500,700,900*/
+	font-style: normal;
+	font-size: 100%;
+	color:saddlebrown;
+
+	background: white;
+	overflow-x: hidden; /*横方向にはみ出した部分を表示しない*/
+}
+
+h1 {
+	font-weight: 700;
+	text-align: center; /*内容をセンタリング*/
+}
+
+h2 {
+	font-weight: 700;
+	margin-top: 30px;
+	margin-bottom: 5px;
+}
+
+a {
+	color:saddlebrown;
+	transition: 0.3s;
+}
+
+a:hover {
+	color: green;
+}
+
+section {
+	margin: 0 auto;
+	max-width: 1300px; /*最大幅。これ以上広がらない。*/
+	padding: 2%; /*ボックス内の余白*/
+	line-height: 2; /*行間*/
+}
+
+
+
+/*header
+---------------------------------------------------------------------------*/
+
+header {
+	margin: 20px auto;
+	max-width: 1300px; /*最大幅。これ以上広がらない。*/
+	padding: 10px 2%;
+	font-weight: 900;
+	display: flex;
+	flex-wrap: wrap; /*折り返す*/
+	justify-content: space-between; /*左右均等配置*/
+	align-items: flex-end; /*下揃え*/
+}
+
+header a {
+	text-decoration: none; /*リンクの下線をなくす*/	
+}
+
+header img {
+	width: 260px;
+}
+
+#menu {
+	display: flex;
+	flex-direction: column; /*縦に並べる*/
+	gap: 10px; /*隙間*/
+	margin-bottom: 10px;
+}
+
+#menu ul {
+	display: flex;
+	justify-content: flex-end; /*右揃え*/
+	gap: 20px; /*隙間*/
+	list-style: none; /*項目の■をなくす*/
+}
+
+.menu-icon {
+	font-size: x-large;
+}
+
+
+
+/*footer
+---------------------------------------------------------------------------*/
+
+footer {
+	background: yellowgreen;
+	color: white;
+	margin-top: 30px;
+	padding: 10px;
+	line-height: 1.7; /*行間*/
+}
+
+#footer {
+	display: flex;
+	flex-wrap: wrap; /*折り返す*/
+	justify-content: space-between; /*左右均等配置*/
+	align-items: flex-end; /*下揃え*/
+	gap: 20px; /*隙間*/
+}
+
+footer img {
+	width: 220px;
+}
+
+footer i {
+	font-size: medium;
+	margin-right: 5px;
+}
+
+footer h4 {
+	margin-bottom: 10px;
+	border-bottom: 1px solid white;
+}
+
+footer ul {
+	list-style: none; /*項目の■をなくす*/
+}
+
+footer a {
+	color: white;
+	font-size: small;
+	text-decoration: none; /*リンクの下線をなくす*/		
+}
+
+.sitemap ul {
+	display: flex;
+	flex-wrap: wrap; /*折り返す*/
+	max-width: auto;
+	width: 340px;
+	gap: 20px; /*隙間*/
+}
+
+.link {
+	display: flex;
+	flex-wrap: wrap; /*折り返す*/
+	gap: 20px; /*隙間*/
+}
+
+.link-box {
+	display: flex;
+	flex-direction: column; /*縦に並べる*/
+	width: 100px;
+}
+
+.copy {
+	font-size: x-small;
+	text-align: center; /*内容をセンタリング*/
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
