@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+
+/*共通
+---------------------------------------------------------------------------*/
+
 body {
 	font-family: "Zen Maru Gothic",sans-serif;
 	font-weight: 500; /*300,400,500,700,900*/
@@ -14,12 +18,7 @@ body {
 h1 {
 	font-weight: 700;
 	text-align: center; /*内容をセンタリング*/
-}
-
-h2 {
-	font-weight: 700;
-	margin-top: 30px;
-	margin-bottom: 5px;
+	letter-spacing: 0.1em; /*文字間隔*/
 }
 
 a {
@@ -31,11 +30,25 @@ a:hover {
 	color: green;
 }
 
-section {
-	margin: 0 auto;
-	max-width: 1300px; /*最大幅。これ以上広がらない。*/
-	padding: 2%; /*ボックス内の余白*/
-	line-height: 2; /*行間*/
+ul {
+	list-style: none; /*項目の■をなくす*/
+}
+
+header ,
+footer section {
+	max-width: 1000px; /*最大幅*/
+	margin: 20px auto;
+	padding: 10px;
+}
+
+header a,
+footer a,
+.btn a {
+	text-decoration: none; /*リンクの下線をなくす*/	
+}
+
+.logo:hover {
+	opacity: 0.8; /*カーソルを乗せたとき薄くなる*/
 }
 
 
@@ -44,36 +57,29 @@ section {
 ---------------------------------------------------------------------------*/
 
 header {
-	margin: 20px auto;
-	max-width: 1300px; /*最大幅。これ以上広がらない。*/
-	padding: 10px 2%;
-	font-weight: 900;
 	display: flex;
 	flex-wrap: wrap; /*折り返す*/
 	justify-content: space-between; /*左右均等配置*/
 	align-items: flex-end; /*下揃え*/
-}
-
-header a {
-	text-decoration: none; /*リンクの下線をなくす*/	
+	font-weight: 900;
 }
 
 header img {
 	width: 260px;
+	margin-left: 20px;
 }
 
-#menu {
+nav {
 	display: flex;
 	flex-direction: column; /*縦に並べる*/
+	margin: 10px 20px;
 	gap: 10px; /*隙間*/
-	margin-bottom: 10px;
 }
 
-#menu ul {
+nav ul {
 	display: flex;
 	justify-content: flex-end; /*右揃え*/
 	gap: 20px; /*隙間*/
-	list-style: none; /*項目の■をなくす*/
 }
 
 .menu-icon {
@@ -85,6 +91,69 @@ header img {
 /*main
 ---------------------------------------------------------------------------*/
 
+main section {
+	max-width: 900px; /*最大幅*/
+	width: 90%;
+	margin: 0 auto;
+	padding: 20px;
+	line-height: 2; /*行間*/
+}
+
+main h2 {
+	margin: 30px auto;
+	font-weight: 700;
+	letter-spacing: 0.1em; /*文字間隔*/
+	border-bottom: 2px dotted yellowgreen ;
+	padding: 5px 20px;
+}
+
+main h3 {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+main h3::before {
+	content: "◆";
+	padding-right: 5px;
+}
+
+main p ,main table ,main ul {
+	margin: 10px 0 10px 20px;
+}
+
+main ul {
+	list-style-type: circle;
+	list-style-position: inside;
+}
+
+#attention li {
+	margin-top: 10px;
+}
+
+#schedule table {
+	border-collapse: collapse; /*境界線を一本にする*/
+	text-align: center; /*内容をセンタリング*/
+}
+
+#schedule th {
+	width: 100px;
+	padding: 5px 0;
+	border: 1px solid gainsboro;
+	border-width: 1px 2px 1px 0;
+}
+
+#schedule td {
+	width: 80px;
+	padding: 5px 0;
+	border: 1px solid gainsboro;
+	border-width: 1px 0;
+}
+
+#schedule .small {
+	margin-bottom: 20px;
+	font-size: small;
+}
+
 
 
 /*footer
@@ -94,11 +163,10 @@ footer {
 	background: yellowgreen;
 	color: white;
 	margin-top: 30px;
-	padding: 10px;
 	line-height: 1.7; /*行間*/
 }
 
-#footer {
+footer section {
 	display: flex;
 	flex-wrap: wrap; /*折り返す*/
 	justify-content: space-between; /*左右均等配置*/
@@ -106,39 +174,21 @@ footer {
 	gap: 20px; /*隙間*/
 }
 
-footer img {
+.sitemap {
+	width: 340px;
+}
+
+.sitemap ,
+.link-up {
+	margin: 10px 2%;
+}
+
+.sitemap img {
 	width: 220px;
 }
 
-footer i {
-	font-size: medium;
-	margin-right: 5px;
-}
-
-footer h4 {
-	margin-bottom: 10px;
-	border-bottom: 1px solid white;
-}
-
-footer ul {
-	list-style: none; /*項目の■をなくす*/
-}
-
-footer a {
-	color: white;
-	font-size: small;
-	text-decoration: none; /*リンクの下線をなくす*/		
-}
-
-.sitemap ul {
-	display: flex;
-	flex-wrap: wrap; /*折り返す*/
-	max-width: auto;
-	width: 340px;
-	gap: 20px; /*隙間*/
-}
-
-.link {
+.sitemap ul ,
+.link-up {
 	display: flex;
 	flex-wrap: wrap; /*折り返す*/
 	gap: 20px; /*隙間*/
@@ -150,10 +200,53 @@ footer a {
 	width: 100px;
 }
 
+footer h4 {
+	margin-bottom: 10px;
+	border-bottom: 1px solid white;
+}
+
+footer i {
+	font-size: medium;
+	margin-right: 5px;
+}
+
+footer a {
+	color: white;
+	font-size: small;
+}
+
 .copy {
 	font-size: x-small;
 	text-align: center; /*内容をセンタリング*/
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+
+
+
+/*btn
+---------------------------------------------------------------------------*/
+
+.btn {
+	text-align: center; /*内容をセンタリング*/
+}
+
+.btn a {
+	display: flex;
+	justify-content: center; /*左右中央揃え*/
+	align-items: center; /*上下中央揃え*/
+	margin: 30px auto 0;
+	width: 300px;
+	height: 50px;
+	border-radius: 50px; /*角丸*/
+	background: yellow;	
+	border: 1px solid transparent;
+	letter-spacing: 0.1em; /*文字間隔*/
+}
+
+.btn a:hover {
+	background: white;
+	border: 1px solid green;
+	transform: scale(1.01); /*拡大*/
 }
 
