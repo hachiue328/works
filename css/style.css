@@ -4,15 +4,26 @@
 /*共通
 ---------------------------------------------------------------------------*/
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: "Zen Maru Gothic",sans-serif;
 	font-weight: 500; /*300,400,500,700,900*/
 	font-style: normal;
 	font-size: 100%;
 	color:saddlebrown;
-
+	line-height: 2; /*行間*/
 	background: white;
+	height: 100%;
 	overflow-x: hidden; /*横方向にはみ出した部分を表示しない*/
+}
+
+section {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 h1 {
@@ -26,30 +37,31 @@ a {
 	transition: 0.3s;
 }
 
-a:hover {
-	color: green;
-}
-
-ul {
-	list-style: none; /*項目の■をなくす*/
-}
-
-header ,
-footer section {
-	max-width: 1000px; /*最大幅*/
-	margin: 20px auto;
-	padding: 10px;
+#menu, #menu a,
+footer, footer a {
+	color: white;
 }
 
 header a,
 footer a,
-.btn a {
+.btn a,
+.pagetop a {
 	text-decoration: none; /*リンクの下線をなくす*/	
 }
 
-.logo:hover {
-	opacity: 0.8; /*カーソルを乗せたとき薄くなる*/
+a:hover {
+	color: green;
 }
+
+.logo:hover {
+	opacity: 0.7; /*カーソルを乗せたとき薄くなる*/
+}
+
+header ul,
+footer ul {
+	list-style: none; /*項目の■をなくす*/
+}
+
 
 
 
@@ -57,34 +69,87 @@ footer a,
 ---------------------------------------------------------------------------*/
 
 header {
-	display: flex;
-	flex-wrap: wrap; /*折り返す*/
-	justify-content: space-between; /*左右均等配置*/
-	align-items: flex-end; /*下揃え*/
-	font-weight: 900;
+	padding: 5%;
 }
 
 header img {
-	width: 260px;
-	margin-left: 20px;
+	width: 240px;
 }
 
-nav {
+#menu {
+	opacity: 0; /*透明*/
+	position: fixed;
+    top: 0;
+	left: 0;
+	z-index: 100;
+    width: 100%;
+    height: 100%;
+	text-align: center; /*内容をセンタリング*/
+	background: rgba(154, 205, 50, 0.9);
+	transform: translateY(-100%);
+	font-size:large ;
+	transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#menu.open {
+	opacity: 1; /*表示*/
+	transform: translateY(0%);
+}
+
+header button {
+	position: absolute; /*親要素を基準に好きな場所へ配置*/
+    top: 0;
+    right: 0;
 	display: flex;
-	flex-direction: column; /*縦に並べる*/
+	justify-content: center; /*左右中央揃え*/
+	align-items: center; /*上下中央揃え*/
+	background: yellow;
+	width: 50px;
+	height: 50px;
+	border: 1px solid transparent;
+	color: saddlebrown;
+}
+
+#menu img {
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+
+.menu-icon li {
+	display: inline-block;
+	width: 60px;
+	margin-top: 10px;
+	font-size: x-large;
+}
+
+.menu-icon p {
+	margin-top: -10px;
+	font-size: x-small;
+}
+
+
+/*
+#menu {
+	display: flex;
+	flex-direction: column; /*縦に並べる
 	margin: 10px 20px;
-	gap: 10px; /*隙間*/
+	gap: 10px; /*隙間
 }
 
-nav ul {
+#menu ul {
 	display: flex;
-	justify-content: flex-end; /*右揃え*/
-	gap: 20px; /*隙間*/
+	justify-content: flex-end; /*右揃え
+	gap: 20px; /*隙間
 }
 
 .menu-icon {
 	font-size: x-large;
 }
+
+.menu-button {
+	display: block;
+}
+*/
 
 
 
@@ -92,11 +157,7 @@ nav ul {
 ---------------------------------------------------------------------------*/
 
 main section {
-	max-width: 900px; /*最大幅*/
-	width: 90%;
-	margin: 0 auto;
-	padding: 20px;
-	line-height: 2; /*行間*/
+	padding: 5%;
 }
 
 main h2 {
@@ -160,66 +221,64 @@ main ul {
 ---------------------------------------------------------------------------*/
 
 footer {
+	margin-top: 50px;
+	padding: 5% 5% 10%;
 	background: yellowgreen;
-	color: white;
-	margin-top: 30px;
 	line-height: 1.7; /*行間*/
+}
+
+footer img {
+	width: 220px;
+	margin-bottom: 10px;
 }
 
 footer section {
 	display: flex;
 	flex-wrap: wrap; /*折り返す*/
 	justify-content: space-between; /*左右均等配置*/
-	align-items: flex-end; /*下揃え*/
 	gap: 20px; /*隙間*/
 }
 
 .sitemap {
-	width: 340px;
+	display: flex;
+	flex-direction: column; /*縦に並べる*/
+	width: 100%;
 }
 
-.sitemap ,
-.link-up {
-	margin: 10px 2%;
-}
-
-.sitemap img {
-	width: 220px;
-}
-
-.sitemap ul ,
 .link-up {
 	display: flex;
 	flex-wrap: wrap; /*折り返す*/
-	gap: 20px; /*隙間*/
+	justify-content: space-between; /*左右均等配置*/
+	width: 100%;
 }
 
 .link-box {
 	display: flex;
 	flex-direction: column; /*縦に並べる*/
-	width: 100px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 47%;
 }
 
 footer h4 {
 	margin-bottom: 10px;
+	padding-left: 10px;
 	border-bottom: 1px solid white;
 }
 
+footer ul {
+	margin-left: 10px;
+}
+
 footer i {
-	font-size: medium;
+	font-size: large;
 	margin-right: 5px;
 }
 
-footer a {
-	color: white;
-	font-size: small;
-}
-
 .copy {
-	font-size: x-small;
+	padding-top: 40px;	
 	text-align: center; /*内容をセンタリング*/
-	padding-top: 20px;
-	padding-bottom: 20px;
+	font-size: small;
 }
 
 
@@ -235,11 +294,11 @@ footer a {
 	display: flex;
 	justify-content: center; /*左右中央揃え*/
 	align-items: center; /*上下中央揃え*/
-	margin: 30px auto 0;
-	width: 300px;
+	margin: 30px auto;
+	background: yellow;
+	width: 220px;
 	height: 50px;
 	border-radius: 50px; /*角丸*/
-	background: yellow;	
 	border: 1px solid transparent;
 	letter-spacing: 0.1em; /*文字間隔*/
 }
@@ -249,4 +308,77 @@ footer a {
 	border: 1px solid green;
 	transform: scale(1.01); /*拡大*/
 }
+
+
+
+/*ページの上部へ戻るボタン
+---------------------------------------------------------------------------*/
+
+.pagetop {
+	opacity: 0; /*透明*/
+	pointer-events: none;
+	transition: opacity 0.5s ease;
+}
+
+.pagetop-show {
+	opacity: 1; /*表示*/
+	pointer-events: auto;
+}
+
+.pagetop a {
+	display: flex;
+	justify-content: center; /*左右中央揃え*/
+	align-items: center; /*上下中央揃え*/
+	z-index: 99;
+	right: 20px;
+	bottom: 20px;
+	position: fixed; /*画面に固定*/
+	color: saddlebrown;
+	background: rgba(255, 255, 0, 0.8);
+	width: 50px;
+	height: 50px;
+	border-radius: 50%; /*角丸*/
+}
+
+
+
+/*フェードイン設定
+---------------------------------------------------------------------------*/
+
+/*待機中*/
+.in {
+	position: relative;
+	opacity: 0;
+	bottom: -20px;
+	transition: 1s 0.5s;
+}
+
+/*表示後*/
+.instyle {
+	opacity: 1;
+	bottom: 0px;
+}
+
+
+
+/*画面幅700px以上
+---------------------------------------------------------------------------*/
+@media screen and (min-width:700px) {
+
+footer {
+	padding: 50px 5%;
+}
+
+.sitemap ul {
+	display: flex;
+	gap: 30px;
+}
+
+.link-box {
+	width: 23%;
+}
+
+}
+/*画面幅700px以上設定終了:/
+
 
