@@ -1,6 +1,15 @@
 @charset "UTF-8";
 
 
+/*
+カラーリングメモ
+茶　#927f6e　rgba(146, 127, 110, 1)
+緑　#b3c490　rgba(179, 196, 144, 1)
+薄　#fee5bc　rgba(254, 229, 188, 1)
+黄　#ffd87e　rgba(255, 216, 126, 1)
+*/
+
+
 /*共通
 ---------------------------------------------------------------------------*/
 
@@ -13,8 +22,8 @@ body {
 	font-weight: 500; /*300,400,500,700,900*/
 	font-style: normal;
 	font-size: 100%;
-	color:saddlebrown;
-	line-height: 2; /*行間*/
+	color:rgba(146, 127, 110, 1);
+	line-height: 1.8; /*行間*/
 	background: white;
 	height: 100%;
 	overflow-x: hidden; /*横方向にはみ出した部分を表示しない*/
@@ -27,19 +36,21 @@ section {
 }
 
 h1 {
-	font-weight: 700;
+	font-family: "Modak", system-ui;
+	font-weight: 400;
+	font-size: 400%;
+	color: rgba(179, 196, 144, 1);
 	text-align: center; /*内容をセンタリング*/
 	letter-spacing: 0.1em; /*文字間隔*/
 }
 
 a {
-	color:saddlebrown;
+	color:rgba(146, 127, 110, 1);
 	transition: 0.3s;
 }
 
-#menu, #menu a,
-footer, footer a {
-	color: white;
+.logo:hover {
+	opacity: 0.7; /*カーソルを乗せたとき薄くなる*/
 }
 
 header a,
@@ -47,14 +58,6 @@ footer a,
 .btn a,
 .pagetop a {
 	text-decoration: none; /*リンクの下線をなくす*/	
-}
-
-a:hover {
-	color: green;
-}
-
-.logo:hover {
-	opacity: 0.7; /*カーソルを乗せたとき薄くなる*/
 }
 
 header ul,
@@ -84,8 +87,9 @@ header img {
 	z-index: 100;
     width: 100%;
     height: 100%;
+	padding-top: 100px;
 	text-align: center; /*内容をセンタリング*/
-	background: rgba(154, 205, 50, 0.9);
+	background: rgba(254, 229, 188, 0.9);
 	transform: translateY(-100%);
 	font-size:large ;
 	transition: transform 0.5s ease, opacity 0.5s ease;
@@ -103,16 +107,19 @@ header button {
 	display: flex;
 	justify-content: center; /*左右中央揃え*/
 	align-items: center; /*上下中央揃え*/
-	background: yellow;
+	background: rgba(255, 216, 126, 1);
 	width: 50px;
 	height: 50px;
 	border: 1px solid transparent;
-	color: saddlebrown;
+	color: rgba(146, 127, 110, 1)
 }
 
-#menu img {
-	margin-top: 100px;
-	margin-bottom: 20px;
+header, header a {
+	color: rgba(146, 127, 110, 1);
+}
+
+header a:hover {
+	opacity: 0.7; /*カーソルを乗せたとき薄くなる*/
 }
 
 .menu-icon li {
@@ -157,62 +164,74 @@ header button {
 ---------------------------------------------------------------------------*/
 
 main section {
-	padding: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 main h2 {
-	margin: 30px auto;
-	font-weight: 700;
+	margin: 70px 0 30px;
+	font-weight: 900;
 	letter-spacing: 0.1em; /*文字間隔*/
-	border-bottom: 2px dotted yellowgreen ;
+	color: rgba(179, 196, 144, 1);	
+	border-bottom: 2px dotted rgba(179, 196, 144, 1) ;
 	padding: 5px 20px;
 }
 
 main h3 {
 	margin-top: 40px;
-	margin-bottom: 20px;
+	margin-bottom :20px;;
 }
 
 main h3::before {
 	content: "◆";
+	margin-left: 10px;
 	padding-right: 5px;
 }
 
-main p ,main table ,main ul {
-	margin: 10px 0 10px 20px;
+main .text {
+	margin: 0 20px;
+}
+
+main p, main ul, main table {
+	margin-bottom: 10px;
 }
 
 main ul {
+	margin-left: 25px;
 	list-style-type: circle;
-	list-style-position: inside;
 }
 
-#attention li {
-	margin-top: 10px;
-}
-
-#schedule table {
-	border-collapse: collapse; /*境界線を一本にする*/
+main table {
+	border-collapse: separate;
+    border-spacing: 3px;
 	text-align: center; /*内容をセンタリング*/
 }
 
-#schedule th {
+main th {
 	width: 100px;
 	padding: 5px 0;
-	border: 1px solid gainsboro;
-	border-width: 1px 2px 1px 0;
+	background: rgba(254, 229, 188, 0.8);
+	border-radius: 7px;  /*角丸*/
 }
 
-#schedule td {
+main td {
 	width: 80px;
 	padding: 5px 0;
-	border: 1px solid gainsboro;
-	border-width: 1px 0;
+	background: rgba(254, 229, 188, 0.6);
+	border-radius: 7px;  /*角丸*/
 }
 
 #schedule .small {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	font-size: small;
+}
+
+#schedule .small p {
+	margin: 5px 10px;
+}
+
+#attention li {
+	margin-bottom: 10px;
 }
 
 
@@ -221,10 +240,17 @@ main ul {
 ---------------------------------------------------------------------------*/
 
 footer {
-	margin-top: 50px;
+	margin-top: 100px;
 	padding: 5% 5% 10%;
-	background: yellowgreen;
-	line-height: 1.7; /*行間*/
+	background: rgba(146, 127, 110, 0.8);
+}
+
+footer, footer a {
+	color: white;
+}
+
+footer a:hover {
+	color: rgba(254, 229, 188, 1);
 }
 
 footer img {
@@ -295,7 +321,7 @@ footer i {
 	justify-content: center; /*左右中央揃え*/
 	align-items: center; /*上下中央揃え*/
 	margin: 30px auto;
-	background: yellow;
+	background: rgba(255, 216, 126, 1);
 	width: 220px;
 	height: 50px;
 	border-radius: 50px; /*角丸*/
@@ -304,8 +330,7 @@ footer i {
 }
 
 .btn a:hover {
-	background: white;
-	border: 1px solid green;
+	box-shadow: 0 2px 5px rgba(111, 95, 86, 0.3); /*右 下 幅*/
 	transform: scale(1.01); /*拡大*/
 }
 
@@ -333,30 +358,11 @@ footer i {
 	right: 20px;
 	bottom: 20px;
 	position: fixed; /*画面に固定*/
-	color: saddlebrown;
-	background: rgba(255, 255, 0, 0.8);
+	color: rgba(146, 127, 110, 1);
+	background: rgba(255, 216, 126, 0.8);
 	width: 50px;
 	height: 50px;
 	border-radius: 50%; /*角丸*/
-}
-
-
-
-/*フェードイン設定
----------------------------------------------------------------------------*/
-
-/*待機中*/
-.in {
-	position: relative;
-	opacity: 0;
-	bottom: -20px;
-	transition: 1s 0.5s;
-}
-
-/*表示後*/
-.instyle {
-	opacity: 1;
-	bottom: 0px;
 }
 
 

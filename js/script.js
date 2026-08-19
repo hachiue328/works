@@ -26,18 +26,3 @@ window.addEventListener('scroll', function() {
     }
 });
 
-
-
-//instyle
-
-const upElements = document.querySelectorAll('.in');
-
-window.addEventListener('scroll', function() {
-    upElements.forEach(function(element) {
-        const position = element.getBoundingClientRect().top;
-
-        if (position < window.innerHeight * 0.8) {
-            element.classList.add('instyle');
-        }
-    });
-});
