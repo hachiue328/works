@@ -5,7 +5,7 @@
 カラーリングメモ
 茶　#927f6e　rgba(146, 127, 110, 1)
 緑　#b3c490　rgba(179, 196, 144, 1)
-薄　#fee5bc　rgba(254, 229, 188, 1)
+薄　#feeac9　rgba(254, 234, 201, 1)
 黄　#ffd87e　rgba(255, 216, 126, 1)
 */
 
@@ -38,7 +38,7 @@ section {
 h1 {
 	font-family: "Modak", system-ui;
 	font-weight: 400;
-	font-size: 400%;
+	font-size: 300%;
 	color: rgba(179, 196, 144, 1);
 	text-align: center; /*内容をセンタリング*/
 	letter-spacing: 0.1em; /*文字間隔*/
@@ -49,14 +49,12 @@ a {
 	transition: 0.3s;
 }
 
-.logo:hover {
-	opacity: 0.7; /*カーソルを乗せたとき薄くなる*/
-}
-
 header a,
 footer a,
 .btn a,
-.pagetop a {
+.btn-icon a,
+.pagetop a,
+.box-set a {
 	text-decoration: none; /*リンクの下線をなくす*/	
 }
 
@@ -65,6 +63,9 @@ footer ul {
 	list-style: none; /*項目の■をなくす*/
 }
 
+.logo:hover {
+	opacity: 0.7; /*カーソルを乗せたとき薄くなる*/
+}
 
 
 
@@ -81,7 +82,7 @@ header img {
 
 #menu {
 	opacity: 0; /*透明*/
-	position: fixed;
+	position: fixed; /*画面に固定*/
     top: 0;
 	left: 0;
 	z-index: 100;
@@ -89,7 +90,7 @@ header img {
     height: 100%;
 	padding-top: 100px;
 	text-align: center; /*内容をセンタリング*/
-	background: rgba(254, 229, 188, 0.9);
+	background: rgba(254, 234, 201, 0.9);
 	transform: translateY(-100%);
 	font-size:large ;
 	transition: transform 0.5s ease, opacity 0.5s ease;
@@ -100,14 +101,19 @@ header img {
 	transform: translateY(0%);
 }
 
+.menu-sitemap li {
+	padding: 20px;
+}
+
 header button {
-	position: absolute; /*親要素を基準に好きな場所へ配置*/
-    top: 0;
-    right: 0;
+	top: 20px;
+	right: 20px;
+	position: fixed; /*画面に固定*/	
+	border-radius: 50%; /*角丸*/
 	display: flex;
 	justify-content: center; /*左右中央揃え*/
 	align-items: center; /*上下中央揃え*/
-	background: rgba(255, 216, 126, 1);
+	background: rgba(255, 216, 126, 0.8);
 	width: 50px;
 	height: 50px;
 	border: 1px solid transparent;
@@ -192,6 +198,10 @@ main .text {
 	margin: 0 20px;
 }
 
+main img {
+	width: 100%;
+}
+
 main p, main ul, main table {
 	margin-bottom: 10px;
 }
@@ -210,16 +220,32 @@ main table {
 main th {
 	width: 100px;
 	padding: 5px 0;
-	background: rgba(254, 229, 188, 0.8);
+	background: rgba(254, 234, 201, 1);
 	border-radius: 7px;  /*角丸*/
 }
 
 main td {
 	width: 80px;
 	padding: 5px 0;
-	background: rgba(254, 229, 188, 0.6);
+	background: rgba(254, 234, 201, 0.5);
 	border-radius: 7px;  /*角丸*/
 }
+
+.indent p {
+	text-indent: 0.5em;
+}
+
+.box-set {
+	display: flex;
+	flex-wrap: wrap; /*折り返す*/
+	justify-content: space-between; /*左右均等配置*/
+	margin: 40px 20px 0;
+}
+
+
+
+/*main commission
+---------------------------------------------------------------------------*/
 
 #schedule .small {
 	margin-bottom: 30px;
@@ -232,6 +258,70 @@ main td {
 
 #attention li {
 	margin-bottom: 10px;
+}
+
+
+
+/*main guideline
+---------------------------------------------------------------------------*/
+
+#guideline h4 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+
+
+/*main about
+---------------------------------------------------------------------------*/
+
+.model {
+	position: relative;
+	display: flex;
+	justify-content: center; /*左右中央揃え*/	
+	align-items: flex-start; /*上揃え*/
+	margin: 0 -5%;
+}
+
+.model img {
+	width: auto;
+	height: 800px;
+	object-fit: cover;
+	object-position: center center;
+	overflow-x: hidden; /*横方向にはみ出した部分を表示しない*/	
+}
+
+.model-on {
+	position: absolute;
+	z-index: 1;
+	width: 80%;
+	max-width: 350px;
+	margin-top: 500px;
+	padding: 10px;
+	background: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(254, 234, 201, 1);
+	border-radius: 20px; /*角丸*/
+}
+
+.model-on h4 {
+	margin: 0 10%;
+	padding: 5px;
+	text-align: center; /*内容をセンタリング*/
+	background: rgba(254, 234, 201, 1);
+	border-radius: 10px; /*角丸*/
+}
+
+.model-on p {
+	margin: 10px 10px 0;
+}
+
+#vtuber .at {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+#creator i {
+	margin-right: 5px;
 }
 
 
@@ -250,7 +340,7 @@ footer, footer a {
 }
 
 footer a:hover {
-	color: rgba(254, 229, 188, 1);
+	color: rgba(254, 234, 201, 1);
 }
 
 footer img {
@@ -278,15 +368,15 @@ footer section {
 	width: 100%;
 }
 
-.link-box {
+.link-set {
 	display: flex;
 	flex-direction: column; /*縦に並べる*/
-	margin-top: 10px;
 	margin-bottom: 10px;
 	width: 47%;
 }
 
 footer h4 {
+	margin-top: 10px;
 	margin-bottom: 10px;
 	padding-left: 10px;
 	border-bottom: 1px solid white;
@@ -322,6 +412,7 @@ footer i {
 	align-items: center; /*上下中央揃え*/
 	margin: 30px auto;
 	background: rgba(255, 216, 126, 1);
+	box-shadow: 0 2px 5px rgba(111, 95, 86, 0.3); /*右 下 幅*/
 	width: 220px;
 	height: 50px;
 	border-radius: 50px; /*角丸*/
@@ -329,9 +420,69 @@ footer i {
 	letter-spacing: 0.1em; /*文字間隔*/
 }
 
-.btn a:hover {
+.btn-icon {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center; /*左右中央揃え*/
+}
+
+.btn-icon a {
+	display: flex;
+	justify-content: center; /*左右中央揃え*/
+	align-items: center; /*上下中央揃え*/
+	margin: 20px;
+	color: rgba(146, 127, 110, 1);
+	background: rgba(255, 216, 126, 0.8);
 	box-shadow: 0 2px 5px rgba(111, 95, 86, 0.3); /*右 下 幅*/
+	width: 60px;
+	height: 60px;
+	border-radius: 50%; /*角丸*/
+	font-size: 25px;
+}
+
+.btn-box {
+	display: flex;
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+	padding: 20px;
+	background: white;
+	border-radius: 20px; /*角丸*/
+	border: 2px solid rgba(255, 216, 126, 1);
+	box-shadow: 0 2px 5px rgba(111, 95, 86, 0.3); /*右 下 幅*/
+}
+
+.btn-box i {
+	display: flex;
+	justify-content: center; /*左右中央揃え*/
+	align-items: center; /*上下中央揃え*/
+	flex-shrink: 0; /*縮まない*/
+	margin-right: 20px;
+	color: rgba(146, 127, 110, 1);
+	background: rgba(255, 216, 126, 0.8);
+	width: 60px;
+	height: 60px;
+	border-radius: 50%; /*角丸*/
+	font-size: 25px;
+}
+
+.btn-box h4 {
+	font-size: 1.1rem;
+}
+
+.btn-box p {
+	margin-bottom: 0;
+}
+
+.btn a:hover {
+	box-shadow: 0 5px 5px rgba(111, 95, 86, 0.3); /*右 下 幅*/
 	transform: scale(1.01); /*拡大*/
+}
+
+.btn-icon a:hover,
+.btn-box:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 7px 5px rgba(111, 95, 86, 0.3); /*右 下 幅*/
 }
 
 
@@ -371,6 +522,14 @@ footer i {
 ---------------------------------------------------------------------------*/
 @media screen and (min-width:700px) {
 
+.model-set {
+	display: flex;
+	justify-content: center; /*左右中央揃え*/
+	align-items: center; /*上下中央揃え*/	
+	width: auto;
+	gap: 30px;
+}
+
 footer {
 	padding: 50px 5%;
 }
@@ -380,11 +539,9 @@ footer {
 	gap: 30px;
 }
 
-.link-box {
+.link-set {
 	width: 23%;
 }
 
+/*画面幅700px以上設定終了*/
 }
-/*画面幅700px以上設定終了:/
-
-
